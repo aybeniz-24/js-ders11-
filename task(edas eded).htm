@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function sadeEdedYoxla(eded){
+                if(eded < 2) return false
+                for (let j = 2; j <= Math.sqrt(eded); j++) {
+                    if( eded % j === 0 ) return false
+                }
+                return true
+            }
+
+            function sadeEded(){
+                for (let i = 2; i < 1000; i++) {
+                   let count = 0
+                        for (let j = 1; j <= i; j++) {
+                            if( i % j === 0){
+                            count++
+                            }
+                        }
+                    if( count === 2 ){
+                        let stringEded = i.toString()
+                        let tersStringEded = stringEded.split('').reverse().join('')
+                        let ededeCevir = parseInt(tersStringEded) 
+                        if( sadeEdedYoxla(ededeCevir))
+                        console.log(` Sade: ${i} - Edas: ${tersStringEded}`);
+                    }
+                }
+                   
+            }
+            sadeEded()
+        </script>
+    </body>
+</html>
